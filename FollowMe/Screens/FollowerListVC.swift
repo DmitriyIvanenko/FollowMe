@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class FollowerListVC: FMDataLoadingVC {
     
     enum Section { case main }
@@ -25,6 +26,7 @@ class FollowerListVC: FMDataLoadingVC {
     init(username: String) {
         super.init(nibName: nil, bundle: nil)
         self.username = username
+        title = username
     }
     
     required init?(coder: NSCoder) {

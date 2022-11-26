@@ -11,13 +11,11 @@ class SearchVC: UIViewController {
     
     let logoImageView = UIImageView()
     let usernameTextField = FMTextField()
-    var isUsernameEntered: Bool {
-        return !usernameTextField.text!.isEmpty
-    }
     let callToActionButton = FMButton(backgroundColor: .systemGreen, title: "Get Followers")
-        
     let padding: CGFloat = 50
     
+    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +43,8 @@ class SearchVC: UIViewController {
     
     @objc func pushFolloowerListVC() {
         guard isUsernameEntered else {
-            presentFMAlertOnMainThread(title: "Empty Username", message: "Please enter a Username, we need to know who to loock for😄", buttonTitle: "Ok")
+            presentFMAlertOnMainThread(title: "Empty Username", message: "Please enter a Username, we need to know who to loock for 😄.", buttonTitle: "Ok")
             return
-            
         }
         usernameTextField.resignFirstResponder()
         
@@ -90,8 +87,7 @@ class SearchVC: UIViewController {
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
             callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            callToActionButton.heightAnchor.constraint(equalToConstant: padding)
-            
+            callToActionButton.heightAnchor.constraint(equalToConstant: padding) 
         ])
     }
 }
